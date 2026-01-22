@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>船長清潔團隊｜專業清潔安心交給船長</title>
+
+  <meta name="description" content="船長清潔團隊提供居家清潔、辦公室清潔、裝潢後細清等專業服務，安心、細心、值得信賴。">
+  <meta name="keywords" content="清潔公司, 居家清潔, 辦公室清潔, 裝潢後清潔, 船長清潔">
+
+  <meta property="og:title" content="船長清潔團隊｜專業清潔安心交給船長">
+  <meta property="og:description" content="專業清潔服務，安心交給船長清潔團隊。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.captain-clean.com">
+  <meta property="og:locale" content="zh_TW">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #1e88e5;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1e88e5;
+    }
+
+    /* 服務項目 */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .service h3 { color: #1e88e5; margin-top: 0; }
+
+    /* 表單區塊 */
+    .survey-section {
+      background: #f9f9f9;
+      border-bottom: 1px solid #eee;
+    }
+
+    .survey-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"], 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .tight-radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      justify-content: center; /* 單選鈕也稍微置中 */
+    }
+
+    .tight-radio-group label {
+      margin: 0 5px 0 0;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: #1e88e5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover { background: #1565c0; }
+
+    /* 聯絡我們：完全置中佈局 */
+    .contact-container {
+      max-width: 800px;
+      margin: auto;
+      text-align: center; /* 這裡讓內容置中 */
+    }
+
+    .contact-info p {
+      margin-bottom: 15px;
+    }
+
+    .icons {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: center; /* 社群圖示置中 */
+      margin-top: 25px;
+    }
+
+    .icons li a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      color: #fff !important;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 24px;
+      transition: 0.3s ease;
+    }
+
+    .btn-facebook { background-color: #1877F2; }
+    .btn-instagram { background-color: #E4405F; }
+    .btn-line { background-color: #06C755; }
+
+    .icons li a:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+    .floating-line {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #06C755;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white !important;
+      font-size: 32px;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="https://line.me/ti/p/YZIF94aF5W" class="floating-line" target="_blank" title="LINE 線上諮詢">
+    <i class="fa-brands fa-line"></i>
+  </a>
+<header style="background-color: #84C1FF; padding: 40px; color: white;"> <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+    
+    <img src="123.jpeg" alt="船長清潔團隊標誌" style="width: 200px; height: auto; border-radius: 12px;">
+
+    <div style="text-align: center;">
+        <h1 style="color: #FFFFFF; margin: 0; font-size: 2.5em;">船長清潔團隊</h1>
+        <p style="margin: 10px 0 20px 0; font-size: 1.2em; opacity: 0.9;">專業清潔・安心交給船長</p>
+
+        <a href="#survey" class="btn" style="background: white; color: #1e88e5; padding: 12px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; transition: 0.3s;">立即線上預約</a>
+    </div>
+
+  </div>
+</header>
+
+  <section id="services">
+    <h1 style="color: #0066CC; text-align: center;">我們的服務項目</h1>
+    <div class="services">
+      <div class="service">
+        <i class="fa-solid fa-house" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <h3>居家清潔</h3>
+        <p>全方位細心打掃，讓家煥然一新。</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-building" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <h3>退租清潔</h3>
+        <p>讓搬家不再煩惱。</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-broom" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <h3>裝潢後細清</h3>
+        <p>專業除塵殘膠，即刻入住。</p>
+
+      </div>
+ <div class="service">
+        <i class="fa-solid fa-clock" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <h3>長期合作</h3>
+        <p>每月一趟，帶走髒亂。</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="survey" class="survey-section">
+    <div class="survey-container">
+      <h3 style="text-align: center; margin-top: 0;">清潔需求調查</h3>
+      <form action="https://formspree.io/f/你的專屬代碼" method="POST">
+        
+        <div class="form-group">
+          <label for="username">您的姓名</label>
+          <input type="text" id="username" name="姓名" placeholder="例如：王小明" required>
+        </div>
+
+        <div class="form-group">
+          <label for="userphone">您的電話</label>
+          <input type="text" id="userphone" name="電話" placeholder="例如：0912345678" required>
+        </div>
+
+        <div class="form-group">
+          <label>您打算清潔的模式？</label>
+          <div class="tight-radio-group">
+            <input type="radio" id="home" name="清潔模式" value="居家清潔" required><label for="home">居家清潔</label>
+            <input type="radio" id="deep" name="清潔模式" value="深度清潔"><label for="deep">深度清潔</label>
+            <input type="radio" id="decor" name="清潔模式" value="裝潢清潔"><label for="decor">裝潢清潔</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city">服務縣市</label>
+          <select id="city" name="縣市" required>
+            <option value="">請選擇縣市</option>
+            <option value="台南">台南市</option>
+            <option value="高雄">高雄市</option>
+            <option value="屏東">屏東縣</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">您的地址</label>
+          <input type="text" id="address" name="地址" placeholder="請填寫街道門牌" required>
+        </div>
+
+        <div class="form-group">
+          <label for="wish">特別需求說明</label>
+          <textarea id="wish" name="需求說明" rows="4" placeholder="請告訴我們您的具體需求..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">送出預約表單</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" style="background: #f5f5f5;">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>聯絡我們</h2>
+        <p>對我們的服務有興趣嗎？<br>
+        歡迎透過以下方式聯繫我們，或是直接填寫上方表單，我們將有專人與您聯絡。</p>
+        <p style="font-size: 1.2rem;">📞 電話：<a href="tel:0971707905" style="color:#1e88e5; text-decoration:none; font-weight:bold;">0971-707-905</a></p>
+        
+        <div class="social-section">
+          <h3 style="margin-top: 30px;">追蹤船長動態</h3>
+          <ul class="icons">
+            <li><a href="https://www.facebook.com/profile.php/?id=61585865725722" target="_blank" class="btn-facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/gobuy__666/" target="_blank" class="btn-instagram"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://line.me/ti/p/YZIF94aF5W" target="_blank" class="btn-line"><i class="fa-brands fa-line"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 船長清潔團隊｜服務地區：台南、高雄、屏東
+  </footer>
+
+</body>
+</html>
