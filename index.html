@@ -26,40 +26,76 @@
       scroll-behavior: smooth;
     }
 
+    /* 響應式 Header */
     header {
-      background: #1e88e5;
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
+      background-color: #84C1FF;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: row; /* 電腦版橫排 */
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .header-logo {
+      width: 180px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     header h1 {
       margin: 0;
       font-size: 2.5rem;
+      color: #FFFFFF;
     }
 
     header p {
       font-size: 1.2rem;
-      margin-top: 10px;
+      margin: 10px 0 20px 0;
+      opacity: 0.9;
+    }
+
+    /* 按鈕樣式 */
+    .btn-appointment {
+      background: white;
+      color: #1e88e5;
+      padding: 12px 32px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-appointment:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
     }
 
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       color: #1e88e5;
     }
 
-    /* 服務項目 */
+    /* 服務項目響應式 */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
     }
 
     .service {
@@ -68,10 +104,11 @@
       padding: 20px;
       text-align: center;
       transition: 0.3s;
+      background: white;
     }
 
     .service:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .service h3 { color: #1e88e5; margin-top: 0; }
+    .service h3 { color: #1e88e5; margin-top: 10px; font-size: 1.2rem; }
 
     /* 表單區塊 */
     .survey-section {
@@ -83,13 +120,13 @@
       max-width: 600px;
       margin: auto;
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .form-group label {
@@ -112,13 +149,12 @@
     .tight-radio-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px;
       align-items: center;
-      justify-content: center; /* 單選鈕也稍微置中 */
     }
 
     .tight-radio-group label {
-      margin: 0 5px 0 0;
+      margin-right: 10px;
       font-weight: normal;
       cursor: pointer;
     }
@@ -136,63 +172,51 @@
       transition: 0.3s;
     }
 
-    .submit-btn:hover { background: #1565c0; }
-
-    /* 聯絡我們：完全置中佈局 */
+    /* 聯絡資訊 */
     .contact-container {
-      max-width: 800px;
-      margin: auto;
-      text-align: center; /* 這裡讓內容置中 */
-    }
-
-    .contact-info p {
-      margin-bottom: 15px;
+      text-align: center;
     }
 
     .icons {
       list-style: none;
       padding: 0;
       display: flex;
-      gap: 20px;
-      justify-content: center; /* 社群圖示置中 */
-      margin-top: 25px;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     .icons li a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 55px;
-      height: 55px;
+      width: 50px;
+      height: 50px;
       color: #fff !important;
       border-radius: 50%;
       text-decoration: none;
-      font-size: 24px;
-      transition: 0.3s ease;
+      font-size: 22px;
     }
 
     .btn-facebook { background-color: #1877F2; }
     .btn-instagram { background-color: #E4405F; }
     .btn-line { background-color: #06C755; }
 
-    .icons li a:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
     .floating-line {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      width: 55px;
+      height: 55px;
       background-color: #06C755;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white !important;
-      font-size: 32px;
-      z-index: 999;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      text-decoration: none;
+      font-size: 28px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     footer {
@@ -200,7 +224,34 @@
       color: #ccc;
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    /* 手機版特別調整 (Media Query) */
+    @media (max-width: 600px) {
+      .header-container {
+        flex-direction: column; /* 手機版變直排 */
+        text-align: center;
+        gap: 20px;
+      }
+      .header-logo {
+        width: 150px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .services {
+        grid-template-columns: repeat(2, 1fr); /* 服務項目在手機上變兩欄 */
+      }
+      .service {
+        padding: 15px 10px;
+      }
+      .service h3 {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -210,44 +261,40 @@
   <a href="https://line.me/ti/p/YZIF94aF5W" class="floating-line" target="_blank" title="LINE 線上諮詢">
     <i class="fa-brands fa-line"></i>
   </a>
-<header style="background-color: #84C1FF; padding: 40px; color: white;"> <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
-    
-    <img src="123.jpeg" alt="船長清潔團隊標誌" style="width: 200px; height: auto; border-radius: 12px;">
 
-    <div style="text-align: center;">
-        <h1 style="color: #FFFFFF; margin: 0; font-size: 2.5em;">船長清潔團隊</h1>
-        <p style="margin: 10px 0 20px 0; font-size: 1.2em; opacity: 0.9;">專業清潔・安心交給船長</p>
-
-        <a href="#survey" class="btn" style="background: white; color: #1e88e5; padding: 12px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; transition: 0.3s;">立即線上預約</a>
+  <header>
+    <div class="header-container">
+      <img src="123.jpeg" alt="船長清潔團隊標誌" class="header-logo">
+      <div class="header-text">
+        <h1>船長清潔團隊</h1>
+        <p>專業清潔・安心交給船長</p>
+        <a href="#survey" class="btn-appointment">立即線上預約</a>
+      </div>
     </div>
-
-  </div>
-</header>
+  </header>
 
   <section id="services">
-    <h1 style="color: #0066CC; text-align: center;">我們的服務項目</h1>
+    <h2>我們的服務項目</h2>
     <div class="services">
       <div class="service">
-        <i class="fa-solid fa-house" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <i class="fa-solid fa-house" style="font-size: 1.8rem; color: #1e88e5;"></i>
         <h3>居家清潔</h3>
-        <p>全方位細心打掃，讓家煥然一新。</p>
+        <p>全方位細心打掃</p>
       </div>
       <div class="service">
-        <i class="fa-solid fa-building" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <i class="fa-solid fa-building" style="font-size: 1.8rem; color: #1e88e5;"></i>
         <h3>退租清潔</h3>
-        <p>讓搬家不再煩惱。</p>
+        <p>搬家不再煩惱</p>
       </div>
       <div class="service">
-        <i class="fa-solid fa-broom" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+        <i class="fa-solid fa-broom" style="font-size: 1.8rem; color: #1e88e5;"></i>
         <h3>裝潢後細清</h3>
-        <p>專業除塵殘膠，即刻入住。</p>
-
+        <p>專業除塵殘膠</p>
       </div>
- <div class="service">
-        <i class="fa-solid fa-clock" style="font-size: 2rem; color: #1e88e5; margin-bottom: 10px;"></i>
+      <div class="service">
+        <i class="fa-solid fa-clock" style="font-size: 1.8rem; color: #1e88e5;"></i>
         <h3>長期合作</h3>
-        <p>每月一趟，帶走髒亂。</p>
-
+        <p>定期帶走髒亂</p>
       </div>
     </div>
   </section>
@@ -270,9 +317,9 @@
         <div class="form-group">
           <label>您打算清潔的模式？</label>
           <div class="tight-radio-group">
-            <input type="radio" id="home" name="清潔模式" value="居家清潔" required><label for="home">居家清潔</label>
-            <input type="radio" id="deep" name="清潔模式" value="深度清潔"><label for="deep">深度清潔</label>
-            <input type="radio" id="decor" name="清潔模式" value="裝潢清潔"><label for="decor">裝潢清潔</label>
+            <span><input type="radio" id="home" name="清潔模式" value="居家清潔" required><label for="home">居家</label></span>
+            <span><input type="radio" id="deep" name="清潔模式" value="深度清潔"><label for="deep">深度</label></span>
+            <span><input type="radio" id="decor" name="清潔模式" value="裝潢清潔"><label for="decor">裝潢</label></span>
           </div>
         </div>
 
@@ -303,10 +350,8 @@
 
   <section id="contact" style="background: #f5f5f5;">
     <div class="contact-container">
-      <div class="contact-info">
         <h2>聯絡我們</h2>
-        <p>對我們的服務有興趣嗎？<br>
-        歡迎透過以下方式聯繫我們，或是直接填寫上方表單，我們將有專人與您聯絡。</p>
+        <p>歡迎直接聯繫我們，我們將有專人回覆您。</p>
         <p style="font-size: 1.2rem;">📞 電話：<a href="tel:0971707905" style="color:#1e88e5; text-decoration:none; font-weight:bold;">0971-707-905</a></p>
         
         <div class="social-section">
@@ -317,7 +362,6 @@
             <li><a href="https://line.me/ti/p/YZIF94aF5W" target="_blank" class="btn-line"><i class="fa-brands fa-line"></i></a></li>
           </ul>
         </div>
-      </div>
     </div>
   </section>
 
