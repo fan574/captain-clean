@@ -218,35 +218,54 @@
       </div>
     </div>
   </section>
-
-  <section id="survey" class="survey-section">
+<section id="survey" class="survey-section">
     <div class="survey-container">
       <h3 style="text-align: center; margin-top: 0;">清潔需求調查</h3>
-      <form action="https://formspree.io/f/xnjjrnnv" method="POST">
+      <form action="https://formspree.io/f/你的專屬代碼" method="POST">
+        
         <div class="form-group">
-          <label>您的姓名</label>
-          <input type="text" name="姓名" placeholder="例如：王小明" required>
+          <label for="username">您的姓名</label>
+          <input type="text" id="username" name="姓名" placeholder="例如：王小明" required>
         </div>
+
         <div class="form-group">
-          <label>您的電話</label>
-          <input type="text" name="電話" placeholder="例如：0912345678" required>
+          <label for="userphone">您的電話</label>
+          <input type="text" id="userphone" name="電話" placeholder="例如：0912345678" required>
         </div>
+
         <div class="form-group">
-          <label>清潔模式</label>
+          <label>您打算清潔的模式？</label>
           <div class="tight-radio-group">
-            <label><input type="radio" name="清潔模式" value="居家清潔" required> 居家</label>
-            <label><input type="radio" name="清潔模式" value="深度清潔"> 深度</label>
-            <label><input type="radio" name="清潔模式" value="裝潢清潔"> 裝潢</label>
+            <input type="radio" id="home" name="清潔模式" value="居家清潔" required><label for="home">居家清潔</label>
+            <input type="radio" id="deep" name="清潔模式" value="深度清潔"><label for="deep">深度清潔</label>
+            <input type="radio" id="decor" name="清潔模式" value="裝潢清潔"><label for="decor">裝潢清潔</label>
           </div>
         </div>
+
         <div class="form-group">
-          <label>服務縣市</label>
-          <select name="縣市" required>
-            <option value="">請選擇</option>
+          <label for="city">服務縣市</label>
+          <select id="city" name="縣市" required>
+            <option value="">請選擇縣市</option>
             <option value="台南">台南市</option>
             <option value="高雄">高雄市</option>
             <option value="屏東">屏東縣</option>
           </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">您的地址</label>
+          <input type="text" id="address" name="地址" placeholder="請填寫街道門牌" required>
+        </div>
+
+        <div class="form-group">
+          <label for="wish">特別需求說明</label>
+          <textarea id="wish" name="需求說明" rows="4" placeholder="請告訴我們您的具體需求..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">送出預約表單</button>
+      </form>
+    </div>
+  </section>
         </div>
         <div class="form-group">
           <label>您的地址</label>
