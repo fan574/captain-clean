@@ -20,10 +20,10 @@
       scroll-behavior: smooth;
     }
 
-    /* --- 導覽列 Header 修訂：Logo 在左上角且縮小 --- */
+    /* --- 導覽列 Header --- */
     header {
       background-color: #84C1FF;
-      padding: 10px 15px; /* 縮小上下間距，像導覽列 */
+      padding: 10px 15px;
       color: white;
       position: sticky;
       top: 0;
@@ -42,11 +42,11 @@
     }
 
     .header-logo {
-      width: 50px; /* Logo 縮小 */
+      width: 50px;
       height: 50px;
       object-fit: contain;
-      border-radius: 8px; /* 圓角效果 */
-      background: white; /* 加上白底讓 Logo 更明顯 */
+      border-radius: 8px;
+      background: white;
       padding: 2px;
     }
 
@@ -56,14 +56,14 @@
 
     header h1 {
       margin: 0;
-      font-size: 1.3rem; /* 標題適中 */
+      font-size: 1.3rem;
       color: #FFFFFF;
       letter-spacing: 1px;
     }
 
     header p {
       margin: 0;
-      font-size: 0.8rem; /* 副標題縮小 */
+      font-size: 0.8rem;
       opacity: 0.9;
     }
 
@@ -118,7 +118,7 @@
     .service h3 { color: #333; margin: 10px 0; font-size: 1.1rem; }
     .service p { font-size: 0.9rem; color: #666; margin: 0; }
 
-    /* --- 表單區塊 --- */
+    /* --- 表單區塊修訂 --- */
     .survey-section {
       background: #f4f9ff;
     }
@@ -127,21 +127,39 @@
       max-width: 500px;
       margin: auto;
       background: white;
-      padding: 30px;
+      padding: 35px 25px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box;
+    .form-group label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem; color: #444; }
+    .form-group label i { color: #1e88e5; width: 20px; }
+    
+    .form-group input[type="text"], 
+    .form-group input[type="tel"], 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; transition: 0.3s;
     }
 
-    .tight-radio-group { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 5px; }
-    .submit-btn {
-      width: 100%; padding: 15px; background: #1e88e5; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s;
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #1e88e5; outline: none; box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
     }
+
+    /* 單選按鈕美化樣式 */
+    .tight-radio-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+    .radio-label {
+      display: flex; align-items: center; cursor: pointer; background: #f0f7ff; padding: 8px 15px; border-radius: 50px; transition: 0.3s; border: 1px solid #d0e3ff;
+    }
+    .radio-label:hover { background: #d0e3ff; }
+    .radio-label input[type="radio"] { width: auto; margin-right: 6px; cursor: pointer; }
+    .radio-label span { font-size: 0.9rem; color: #1e88e5; font-weight: 500; }
+
+    .submit-btn {
+      width: 100%; padding: 15px; background: #1e88e5; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px;
+    }
+    .submit-btn:hover { background: #1565c0; box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3); }
 
     /* --- 聯絡資訊 --- */
     .icons {
@@ -167,6 +185,8 @@
       .hero { padding: 50px 20px; }
       .hero h2 { font-size: 1.5rem; }
       .services { grid-template-columns: 1fr 1fr; }
+      .tight-radio-group { justify-content: space-between; }
+      .radio-label { flex: 1; justify-content: center; padding: 8px 5px; }
     }
   </style>
 </head>
@@ -194,7 +214,7 @@
   </div>
 
   <section id="services">
-    <h2 style="text-align: center;">我們的服務項目</h2>
+    <h2 style="text-align: center; color: #1e88e5;">我們的服務項目</h2>
     <div class="services">
       <div class="service">
         <i class="fa-solid fa-house"></i>
@@ -218,32 +238,44 @@
       </div>
     </div>
   </section>
-<section id="survey" class="survey-section">
+
+  <section id="survey" class="survey-section">
     <div class="survey-container">
-      <h3 style="text-align: center; margin-top: 0;">清潔需求調查</h3>
-      <form action="https://formspree.io/f/你的專屬代碼" method="POST">
+      <h3 style="text-align: center; margin-top: 0; color: #1e88e5; font-size: 1.5rem;">清潔需求調查</h3>
+      <p style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 25px;">請填寫資訊，我們將儘速提供報價</p>
+      
+      <form action="https://formspree.io/f/xvzzygpk" method="POST">
         
         <div class="form-group">
-          <label for="username">您的姓名</label>
+          <label for="username"><i class="fa-solid fa-user"></i> 您的姓名</label>
           <input type="text" id="username" name="姓名" placeholder="例如：王小明" required>
         </div>
 
         <div class="form-group">
-          <label for="userphone">您的電話</label>
-          <input type="text" id="userphone" name="電話" placeholder="例如：0912345678" required>
+          <label for="userphone"><i class="fa-solid fa-phone"></i> 您的電話</label>
+          <input type="tel" id="userphone" name="電話" placeholder="例如：0912345678" pattern="09[0-9]{8}" title="請輸入正確的 10 位手機號碼" required>
         </div>
 
         <div class="form-group">
-          <label>您打算清潔的模式？</label>
+          <label><i class="fa-solid fa-sparkles"></i> 您打算清潔的模式？</label>
           <div class="tight-radio-group">
-            <input type="radio" id="home" name="清潔模式" value="居家清潔" required><label for="home">居家清潔</label>
-            <input type="radio" id="deep" name="清潔模式" value="深度清潔"><label for="deep">深度清潔</label>
-            <input type="radio" id="decor" name="清潔模式" value="裝潢清潔"><label for="decor">裝潢清潔</label>
+            <label class="radio-label">
+              <input type="radio" id="home" name="清潔模式" value="居家清潔" required>
+              <span>居家清潔</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" id="deep" name="清潔模式" value="深度清潔">
+              <span>深度清潔</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" id="decor" name="清潔模式" value="裝潢清潔">
+              <span>裝潢清潔</span>
+            </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="city">服務縣市</label>
+          <label for="city"><i class="fa-solid fa-location-dot"></i> 服務縣市</label>
           <select id="city" name="縣市" required>
             <option value="">請選擇縣市</option>
             <option value="台南">台南市</option>
@@ -253,24 +285,25 @@
         </div>
 
         <div class="form-group">
-          <label for="address">您的地址</label>
+          <label for="address"><i class="fa-solid fa-map-pin"></i> 您的地址</label>
           <input type="text" id="address" name="地址" placeholder="請填寫街道門牌" required>
         </div>
 
         <div class="form-group">
-          <label for="wish">特別需求說明</label>
-          <textarea id="wish" name="需求說明" rows="4" placeholder="請告訴我們您的具體需求..."></textarea>
+          <label for="wish"><i class="fa-solid fa-comment-dots"></i> 特別需求說明</label>
+          <textarea id="wish" name="需求說明" rows="4" placeholder="請告訴我們您的具體需求，例如：坪數、預計清潔日期等..." style="resize: none;"></textarea>
         </div>
+
+        <input type="text" name="_gotcha" style="display:none">
 
         <button type="submit" class="submit-btn">送出預約表單</button>
       </form>
     </div>
   </section>
-        
 
   <section id="contact" style="background: #fff;">
     <div style="text-align: center;">
-      <h2>聯絡我們</h2>
+      <h2 style="color: #1e88e5;">聯絡我們</h2>
       <p>專業服務，歡迎來電或加 LINE 諮詢</p>
       <p style="font-size: 1.4rem;">📞 <a href="tel:0971707905" style="color:#1e88e5; text-decoration:none; font-weight:bold;">0971-707-905</a></p>
       
